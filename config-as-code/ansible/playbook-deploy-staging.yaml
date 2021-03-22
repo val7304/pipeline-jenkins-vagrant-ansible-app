@@ -1,0 +1,14 @@
+---
+- hosts: server-staging
+  become: true
+  tasks:
+    - name: Copy WAR to webapps
+<<<<<<< HEAD
+<<<<<<< HEAD
+     copy: src=../../greetings-app/target/greetings-0.1-SNAPSHOT.war dest=/opt/tomcat/webapps/hello.war owner=vagrant group=vagrant mode=0744
+=======
+      copy: src={{lookup('env', 'PWD')}}/workspace/greetings-app/target/greetings-0.1-SNAPSHOT.war dest=/opt/tomcat/webapps/hello.war owner=vagrant group=vagrant mode=0744
+>>>>>>> c260f3060495ca4eb09eebf148c2e63519451cfc
+=======
+      copy: src=/../../greetings-app/target/greetings-0.1-SNAPSHOT.war dest=/opt/tomcat/webapps/hello.war owner=vagrant group=vagrant mode=0744
+>>>>>>> a566d6d4ba0674fd1c9aecec3fcc71257ac515ec
